@@ -54,7 +54,11 @@ export default function EditCustomerModal({
             return false;
         }
         if(!EMAIL_REGEXP.test(customer?.email)) {
-            console.log("It is not a valid email!");
+            setError(prev => ({
+                ...prev,
+                emailError: "Please Enter a valid email!"
+            }))
+            return false;
         }
         setError(prev => ({
             ...prev,
@@ -112,10 +116,6 @@ export default function EditCustomerModal({
                     errorMessage={error?.emailError}
                     onChange={event => {
                         const value = event.target.value;
-                        // * check if the customer email value matches the regexp
-                        if (!EMAIL_REGEXP.test(value) && value !== "") {
-                            return;
-                        }
                         setCustomer(prev => ({
                             ...prev,
                             email: value
@@ -250,9 +250,16 @@ export default function EditCustomerModal({
                     onClick={onClose} />
                 <Button
                     buttonText='Save'
-                    className="px-8 py-2 bg-[#264e6e] text-white rounded-md"
+                    className="px-8 py-2 bg-[#264e6e] text-white rounded-md disabled:opacity-75 disabled:cursor-not-allowed"
                     disabled={isButtonDisabled()}
-                    onClick={() => onSave(customer)} />
+                    onClick={() => {
+                        // check if all the validations are passed or not
+                        const allChecksPassed = [checkName(), checkEmail()].every(Boolean);
+
+                        if (allChecksPassed) {
+                            onSave(customer)
+                        }
+                    }} />
             </div>
         </div>
     </div>

@@ -180,6 +180,7 @@ export default function EditCustomerModal({
                     <Input
                         labelName='Postal Code'
                         type='text'
+                        maxLength={6}
                         placeholder='Enter your postal code'
                         value={customer?.postal}
                         id={customer?.postal}

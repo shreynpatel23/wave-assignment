@@ -9,3 +9,8 @@ export interface ICustomer {
     province: string;
     country: string
 }
+
+export interface IError {
+    nameError: string;
+    emailError: string;
+}

@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
+
+// * interface
 import { ICustomer } from '../../interface';
+
+// * components
 import KevValue from '../Shared/KeyValuePair';
 import EditCustomerModal from '../EditCustomerModal';
 import Button from '../Shared/Button';

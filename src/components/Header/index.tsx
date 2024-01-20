@@ -1,4 +1,6 @@
 import React from 'react';
+
+// * assets
 import logo from '../../assets/img/wave.svg';
 
 export default function Header() {

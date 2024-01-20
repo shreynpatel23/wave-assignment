@@ -1,12 +1,22 @@
 import React, { useState } from 'react';
+
+// * assets
 import Cross from '../../assets/img/Cross.svg';
+
+// * constants
+import { CHANNEL_TYPES } from '../../constants/channelTypes';
+
+// * utils
+import { ALPHABET_REGEXP, EMAIL_REGEXP, NAME_REGEXP } from '../../utils';
+
+// * interface
 import { IEditCustomerModalProps } from './interface';
+import { ICustomer, IError } from '../../interface';
+
+// * components
 import Input from '../Shared/Input';
 import Button from '../Shared/Button';
 import Select from '../Shared/Select';
-import { CHANNEL_TYPES } from '../../constants/channelTypes';
-import { ICustomer, IError } from '../../interface';
-import { ALPHABET_REGEXP, EMAIL_REGEXP, NAME_REGEXP } from '../../utils';
 
 export default function EditCustomerModal({
     customerData,

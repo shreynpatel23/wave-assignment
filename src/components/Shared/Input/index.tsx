@@ -1,4 +1,6 @@
 import React from 'react';
+
+// * interface
 import { IInputProps } from './interface';
 
 export default function Input({

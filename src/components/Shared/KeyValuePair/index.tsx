@@ -1,4 +1,6 @@
 import  React from 'react';
+
+// * interface
 import { KevValueProps } from './interface';
  
 export default function KevValue({children,label,value}: KevValueProps) {
